@@ -1,5 +1,7 @@
 import ContactListItem from './ContactListItem';
 import s from './ContactList.module.css';
+import PropTypes from 'prop-types';
+
 export default function ContactList({ list, onDeleteContact }) {
   return (
     <ul className={s.list}>
@@ -15,3 +17,11 @@ export default function ContactList({ list, onDeleteContact }) {
     </ul>
   );
 }
+ContactList.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
+  onDeleteContact: PropTypes.func.isRequired,
+};
