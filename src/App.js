@@ -16,10 +16,6 @@ export default function App() {
   const [contacts, setContacts] = useLocalStorage('contacts', arr);
   const [filter, setFilter] = useState('');
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
   const formSubmitHandler = item => {
     const normalizedName = item.name.toLowerCase();
     contacts.find(el => {
